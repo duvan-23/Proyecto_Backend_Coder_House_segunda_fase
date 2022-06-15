@@ -33,8 +33,149 @@ class ContenedorFirebase{
         let nombre =this.nombre;
         return await leerId(id, nombre);
     }
+
+    async saveCarrito(data, id){
+        let nombre =this.nombre;
+        return await leerCarrito(nombre,data,id);
+    }
     
+    async deleteByIdCarrito(id, id_prod){
+        let nombre =this.nombre;
+        return await eliminarIdCarrito(id,nombre,id_prod);
+    }
+
+    async putIdCarrito(id,datos,id_prod){
+        let nombre =this.nombre;
+        return await actualizarCarrito(id,nombre,datos,id_prod);
+    }
 }
+
+async function actualizarCarrito(id,nombre,datos,id_prod){
+    let resultado=[],r2,id_doc;
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        const contenido =await query.where("id", "==", Number(id)).get();
+        contenido.forEach(doc =>
+            resultado.push(doc.data())
+        );
+        contenido.forEach(doc =>
+            id_doc=doc.id
+        );
+
+        resultado[0].productos.forEach((object,index) =>{
+            if(object.id === Number(id_prod)){
+                r2=index;
+            }
+        });
+
+        resultado[0].productos.splice(r2,1,datos);
+    }
+    catch(err){
+        resultado= err;
+    }
+    // return console.log(resultado[0].productos);
+    return actualizarCarrito2(resultado[0].productos,nombre,id_doc);
+}
+async function actualizarCarrito2(resultado,nombre,id_doc){
+    
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        resultado = await query.doc(id_doc).update({productos: resultado});
+        console.log(resultado);
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+async function eliminarIdCarrito(id,nombre,id_prod){
+    let resultado=[],r2,id_doc;
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        const contenido =await query.where("id", "==", Number(id)).get();
+        contenido.forEach(doc =>
+            resultado.push(doc.data())
+        );
+        contenido.forEach(doc =>
+            id_doc=doc.id
+        );
+
+        resultado[0].productos.forEach((object,index) =>{
+            if(object.id === id_prod){
+                r2=index;
+            }
+        });
+
+        resultado[0].productos.splice(r2,1);
+    }
+    catch(err){
+        resultado= err;
+    }
+    // return console.log(resultado[0].productos);
+    return guardarC(resultado[0].productos,nombre,id_doc);
+}
+async function guardarC(resultado,nombre,id_doc){
+    
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        resultado = await query.doc(id_doc).update({productos: resultado});
+        console.log(resultado);
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+async function leerCarrito(nombre,data,id){
+    let resultado=[],r2,id_doc;
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        const contenido =await query.where("id", "==", Number(id)).get();
+        
+        contenido.forEach(doc =>
+            resultado.push(doc.data())
+        );
+        if(resultado.length>1){
+            return "Id especificado no existe en el archivo"
+        }
+        console.log(resultado[0]);
+        contenido.forEach(doc =>
+            id_doc=doc.id
+        );
+        r2=resultado;
+        
+        resultado=resultado[0].productos[resultado[0].productos.length-1].id+1;
+    }
+    catch(err){
+        // r2= [];
+        resultado= 1;
+    }
+    return guardarCarrito([resultado,r2],data,nombre,id,id_doc);
+}
+
+async function guardarCarrito(resultados,data,nombre,id,id_doc){
+    let datos =data,resultado;
+    datos.id= resultados[0];
+    resultados[1].forEach((object,index) =>{
+        if(object.id === Number(id)){
+            resultados[1][index].productos.push(datos);
+        }
+    });
+    try{
+        const db = admin.firestore();
+        const query = db.collection(nombre);
+        resultado = await query.doc(id_doc).update({productos: resultados[1][0].productos});
+    }
+    catch(err){
+        resultado=err;
+    }
+    return console.log(resultado);
+}  
 
 async function leerId(id,nombre){
     let resultado=[],r2;
@@ -46,7 +187,7 @@ async function leerId(id,nombre){
             resultado.push(doc.data())
         );
         
-        if(resultado.length>0){
+        if(resultado.length>1){
             resultado[0]="Id especificado no existe en el archivo"
         }
     }

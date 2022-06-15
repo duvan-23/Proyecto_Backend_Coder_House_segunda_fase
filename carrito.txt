@@ -6,7 +6,130 @@
   },
   {
     "timestamp": 1655177678143,
-    "productos": [],
+    "productos": [
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      [
+        {
+          "nombre": "Carro",
+          "descripcion": "Camioneta azul",
+          "codigo": "dd22",
+          "precio": "10000000",
+          "stock": 3,
+          "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+          "timestamp": 1653452237466,
+          "id": 1
+        }
+      ],
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id": 1
+      },
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id": 2
+      },
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id": 3
+      },
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id": 4
+      },
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id": 5
+      }
+    ],
     "id": 2
   },
   {

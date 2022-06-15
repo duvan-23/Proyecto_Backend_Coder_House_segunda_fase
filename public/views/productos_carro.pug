@@ -40,7 +40,8 @@ block productosCarrito
                                     input(type='hidden',id=`valor5${index+1}`,value=`${producto.descripcion}` )
                                     input(type='hidden',id=`valor6${index+1}`,value=`${producto.codigo}` )
                                     input(type='hidden',id=`valor7${index+1}`,value=`${producto.stock}` )
-                                    a.botones-editarc.btn.btn-primary(id=`editar${index+1}`, style="font-size:10px") Actualizar
+                                    input(type='hidden',id=`valor8${index+1}`,value=`${producto.id}` )
+                                    a.botones-editarc.btn.btn-primary(id=`editar${index+1}`, style="font-size:10px") Actualizar 
                                     a.botones-eliminarc.btn.btn-danger(id=`eliminar${index+1}`, style="font-size:10px") Eliminar
             -else
                 h2.alert.alert-warning!="No hay productos"
